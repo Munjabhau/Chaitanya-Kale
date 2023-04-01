@@ -1,0 +1,25 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block css %}
+<link rel='stylesheet' href="{% static 'css/main.css' %}"> <!--link css file -->
+{% endblock %}
+{% block homeActive %} active {% endblock %}
+{% block body %}
+<section class="background firstSection">
+    <div class="box-main">
+        <div class="firstHalf">
+            <h3>Hi There,</h3>
+            <h2>I'am <span class="auto-type"></span></h2>
+            <h4>From India</h4>
+            <div class="buttons">
+                <button class="btn">About Me</button>
+            </div>
+        </div>
+        <div class="secondHalf">
+            <img class="masthead-avatar mb-4 mt-4" src="{%static 'image/admin.png'%}" id="adminImg"/>
+        </div>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="{% static 'js/main.js' %}"></script>
+{% endblock%}

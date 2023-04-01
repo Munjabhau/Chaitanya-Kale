@@ -1,0 +1,40 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block css %}
+<link rel='stylesheet' href="{% static 'css/main.css' %}"> <!--link css file -->
+{% endblock %}
+{% block contactActive %} active {% endblock %}
+{% block body %}
+<div class="global-container" id="forms">
+    <div class="card contact-form">
+        <div class="card-body">
+            <h3 class="card-title text-center" id="titleId">Contact Me</h3>
+            <div class="card-text">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" name="fullName" class="form-control form-control-sm" id="fullName"
+                               placeholder="Enter Full name">
+                    </div>
+                    <div class="form-group">
+
+                        <input type="email" name="email" class="form-control form-control-sm" id="email"
+                               placeholder="Enter Email">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="msg" class="form-control form-control-sm" id="msg"
+                                  placeholder="Enter message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-block">Send Message</button>
+                </form>
+                <div class="container">
+                    <h4 class="text-center">I am Social</h4>
+                    <i class="fa-brands fa-github icon align-center"></i>
+                    <i class="fa-solid fa-envelope icon"></i>
+                    <i class="fa-brands fa-linkedin icon align-center"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}

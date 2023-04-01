@@ -1,0 +1,35 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block css %}
+<link rel='stylesheet' href="{% static 'css/main.css' %}"> <!--link css file -->
+{% endblock %}
+{% block projectActive %} active {% endblock %}
+{% block body %}
+<div class="container">
+    <h3 id="titleId" class="my-3" style="text-align:center;">Projects</h3>
+    <table class="table text-white">
+        <thead>
+        <tr>
+            <th scope="col">S/N</th>
+            <th scope="col">Project Name</th>
+            <th scope="col">Front End</th>
+            <th scope="col">Back End</th>
+            <th scope="col">Database</th>
+            <th scope="col">Description</th>
+        </tr>
+        </thead>
+        {% for p in allProject %}
+        <tbody>
+        <tr>
+            <th scope="row">{{p.sNo}}</th>
+            <td>{{p.projectName}}</td>
+            <td>{{p.frontEnd}}</td>
+            <td>{{p.backEnd}}</td>
+            <td>{{p.database}}</td>
+            <td>{{p.description}}</td>
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+{% endblock%}

@@ -1,0 +1,43 @@
+{%extends 'basic.html'%}
+{%load static%}
+{% block css %}
+<link rel='stylesheet' href="{% static 'css/main.css' %}"> <!--link css file -->
+{% endblock %}
+{%block title%} About Me {%endblock title%}
+{%block aboutActive%}active{%endblock%}
+{%block body%}
+<div class="container">
+    <div>
+        <h2 id="titleId" style="text-align:center;" class="my-3">About Me</h2>
+    </div>
+    <div class="row my-3">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <p>My name is Chaitanya Kale I have completed MSCIT and I am looking for job now I am currently a
+                fresher
+                I am interested in Python programming and have knowledge of Django framework, HTML, CSS, JavaScript,
+                Bootstrap.</p>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+<div class="container">
+    <h2 class="" style="text-align:center;">Personal Details</h2>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-3">
+            <ul>
+                <li><i class="bi bi-rounded-right"></i> <strong>DOB:</strong> 25 April 2000</li>
+                <li><i class="bi bi-rounded-right"></i> <strong>City:</strong> Mumbai ,India</li>
+            </ul>
+        </div>
+        <div class="col-lg-3">
+            <ul>
+                <li><i class="bi bi-rounded-right"></i> <strong>Degree:</strong> M.SC.I.T</li>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
+{%endblock %}

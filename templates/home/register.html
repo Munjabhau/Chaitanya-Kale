@@ -1,0 +1,47 @@
+{% extends 'basic.html' %}
+{% block body %}
+{%load static%}
+{% block css %}
+<link rel='stylesheet' href="{% static 'css/main.css' %}"> <!--link css file -->
+{% endblock %}
+<div class="global-container" id="forms">
+    <div class="card login-form">
+        <div class="card-body">
+            <h3 class="card-title text-center" id="titleId">Create an account</h3>
+            <div class="card-text">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" class="form-control form-control-sm" id="username"
+                               placeholder="Create Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="fname">First Name</label>
+                        <input type="text" name="fname" class="form-control form-control-sm" id="fname"
+                               placeholder="Enter First Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lname">Last Name</label>
+                        <input type="text" name="lname" class="form-control form-control-sm" id="lname"
+                               placeholder="Enter Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" name="email" class="form-control form-control-sm" id="email"
+                               aria-describedby="emailHelp" placeholder="Enter Email Id">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control form-control-sm"
+                               id="password" placeholder="Create Password">
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-block">Register</button>
+                    <p style="text-align:center" class="my-2">Already have an account?<a
+                            href="{% url 'login_attempt' %}">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
